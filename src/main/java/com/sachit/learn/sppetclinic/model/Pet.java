@@ -1,4 +1,4 @@
-package com.sachit.learn.sppetclinic.spring.model;
+package com.sachit.learn.sppetclinic.model;
 
 import java.time.LocalDate;
 

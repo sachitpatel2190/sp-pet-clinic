@@ -1,4 +1,4 @@
-package com.sachit.learn.sppetclinic.spring;
+package com.sachit.learn.sppetclinic;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

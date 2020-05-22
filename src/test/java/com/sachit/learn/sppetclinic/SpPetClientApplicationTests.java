@@ -1,4 +1,4 @@
-package com.sachit.learn.sppetclinic.spring;
+package com.sachit.learn.sppetclinic;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
