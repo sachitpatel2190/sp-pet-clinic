@@ -53,8 +53,7 @@
 
    <scm>
       <developerConnection>scm:git:git@http://github.com/sachitpatel2190/sp-pet-clinic.git</developerConnection>
-    
-    <tag>sp-pet-clinic-0.0.1</tag>
+      <tag>sp-pet-clinic-0.0.1</tag>
   </scm>
 
 </project>
