@@ -10,7 +10,7 @@
 
 	<groupId>com.sachit.learn</groupId>
 	<artifactId>sp-pet-clinic</artifactId>
-	<version>0.0.2</version>
+	<version>0.0.1-SNAPSHOT</version>
 	<name>sp-pet-clinic</name>
 	<packaging>pom</packaging>
 	<description>Demo project for Spring Boot</description>
