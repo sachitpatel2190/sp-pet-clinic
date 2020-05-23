@@ -1,5 +1,5 @@
 package com.sachit.learn.sppetclinic.model;
 
-public class PetType {
+public class PetType extends BaseEntity{
 
 }
