@@ -10,7 +10,7 @@
 
 	<groupId>com.sachit.learn</groupId>
 	<artifactId>sp-pet-clinic</artifactId>
-	<version>0.0.2-SNAPSHOT</version>
+	<version>0.0.2</version>
 	<name>sp-pet-clinic</name>
 	<packaging>pom</packaging>
 	<description>Demo project for Spring Boot</description>
@@ -52,9 +52,9 @@
 	</build>
   
    <scm>
-   		<url>https://github.com/sachitpatel2190/sp-pet-clinic</url>
-        <connection>scm:git:https://github.com/sachitpatel2190/sp-pet-clinic.git</connection>
-    <tag>HEAD</tag>
+       <developerConnection>scm:git:git@github.com:sachitpatel2190/sp-pet-clinic.git</developerConnection>
+      <tag>HEAD</tag>
   </scm>
+  
 
 </project>
