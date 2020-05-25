@@ -1,6 +1,5 @@
 package com.sachit.learn.sppetclinic.services.map;
 
-import java.util.HashSet;
 import java.util.Set;
 
 import com.sachit.learn.sppetclinic.model.Vet;
