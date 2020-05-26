@@ -5,8 +5,9 @@ import java.util.Set;
 
 import com.sachit.learn.sppetclinic.model.Owner;
 import com.sachit.learn.sppetclinic.services.CrudService;
+import com.sachit.learn.sppetclinic.services.OwnerService;
 
-public class OwnerServiceMap extends AbstractMapService<Owner, Long> implements CrudService<Owner, Long>{
+public class OwnerServiceMap extends AbstractMapService<Owner, Long> implements OwnerService{
 
 	@Override
 	public Owner save(Owner owner) {
@@ -40,5 +41,11 @@ public class OwnerServiceMap extends AbstractMapService<Owner, Long> implements 
 	
 	void delete(Owner object) {
 		super.delete(object);
+	}
+
+	@Override
+	public Owner findByLastName(String name) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 }

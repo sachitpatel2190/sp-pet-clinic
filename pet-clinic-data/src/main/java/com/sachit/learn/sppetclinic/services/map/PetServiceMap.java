@@ -4,8 +4,9 @@ import java.util.Set;
 
 import com.sachit.learn.sppetclinic.model.Pet;
 import com.sachit.learn.sppetclinic.services.CrudService;
+import com.sachit.learn.sppetclinic.services.PetService;
 
-public class PetServiceMap extends AbstractMapService<Pet, Long> implements CrudService<Pet, Long>{
+public class PetServiceMap extends AbstractMapService<Pet, Long> implements PetService{
 
 	@Override
 	public Pet save(Pet Pet) {
