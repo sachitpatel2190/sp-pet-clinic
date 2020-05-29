@@ -1,17 +1,18 @@
 package com.sachit.learn.sppetclinic.services.map;
 
-import java.util.HashSet;
 import java.util.Set;
 
+import org.springframework.stereotype.Service;
+
 import com.sachit.learn.sppetclinic.model.Owner;
-import com.sachit.learn.sppetclinic.services.CrudService;
 import com.sachit.learn.sppetclinic.services.OwnerService;
 
+@Service
 public class OwnerServiceMap extends AbstractMapService<Owner, Long> implements OwnerService{
 
 	@Override
 	public Owner save(Owner owner) {
-		return super.save(owner.getId(), owner);
+		return super.save( owner);
 	}
 
 	/**
@@ -24,10 +25,7 @@ public class OwnerServiceMap extends AbstractMapService<Owner, Long> implements 
 		return super.findById(id);
 	}
 
-	Owner save(Long id, Owner object) {
-
-		return super.save(id, object);
-	}
+	
 	
 	
 	public Set<Owner> findAll() {

@@ -2,15 +2,17 @@ package com.sachit.learn.sppetclinic.services.map;
 
 import java.util.Set;
 
+import org.springframework.stereotype.Service;
+
 import com.sachit.learn.sppetclinic.model.Vet;
-import com.sachit.learn.sppetclinic.services.CrudService;
 import com.sachit.learn.sppetclinic.services.VetService;
 
+@Service
 public class VetServiceMap extends AbstractMapService<Vet, Long> implements VetService{
 
 	@Override
-	public Vet save(Vet Vet) {
-		return super.save(Vet.getId(), Vet);
+	public Vet save(Vet vet) {
+		return super.save(vet);
 	}
 
 	/**
@@ -23,11 +25,7 @@ public class VetServiceMap extends AbstractMapService<Vet, Long> implements VetS
 		return super.findById(id);
 	}
 
-	Vet save(Long id, Vet object) {
 
-		return super.save(id, object);
-	}
-	
 	
 	public Set<Vet> findAll() {
 

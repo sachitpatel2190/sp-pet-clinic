@@ -1,26 +1,24 @@
 package com.sachit.learn.sppetclinic.bootstrap;
 
 import org.springframework.boot.CommandLineRunner;
-import org.springframework.stereotype.Controller;
+import org.springframework.stereotype.Component;
 
 import com.sachit.learn.sppetclinic.model.Owner;
-import com.sachit.learn.sppetclinic.model.Pet;
-import com.sachit.learn.sppetclinic.model.PetType;
 import com.sachit.learn.sppetclinic.model.Vet;
 import com.sachit.learn.sppetclinic.services.OwnerService;
 import com.sachit.learn.sppetclinic.services.VetService;
-import com.sachit.learn.sppetclinic.services.map.OwnerServiceMap;
-import com.sachit.learn.sppetclinic.services.map.VetServiceMap;
 
-@Controller
+@Component
 public class DataLoader implements CommandLineRunner {
 
 	private final OwnerService ownerService;
 	private final VetService vetService;
 
-	public DataLoader() {
-		ownerService = new OwnerServiceMap();
-		vetService = new VetServiceMap();
+	
+	public DataLoader(OwnerService ownerService, VetService vetService) {
+		super();
+		this.ownerService = ownerService;
+		this.vetService = vetService;
 	}
 
 	@Override
@@ -46,7 +44,6 @@ public class DataLoader implements CommandLineRunner {
 		Speciality savedDentistry = specialtyService.save(dentistry);
 **/
 		Owner owner1 = new Owner();
-		owner1.setId(1L);
 		owner1.setFirstName("Michael");
 		owner1.setLastName("Weston");
 	//	owner1.setAddress("123 Brickerel");
@@ -63,7 +60,6 @@ public class DataLoader implements CommandLineRunner {
 		ownerService.save(owner1);
 
 		Owner owner2 = new Owner();
-		owner2.setId(2L);
 		owner2.setFirstName("Fiona");
 		owner2.setLastName("Glenanne");
 	/*	owner2.setAddress("123 Brickerel");
@@ -90,7 +86,6 @@ public class DataLoader implements CommandLineRunner {
 		System.out.println("Loaded Owners....");
 */
 		Vet vet1 = new Vet();
-		vet1.setId(1L);
 		vet1.setFirstName("Sam");
 		vet1.setLastName("Axe");
 	//	vet1.getSpecialities().add(savedRadiology);
@@ -98,7 +93,6 @@ public class DataLoader implements CommandLineRunner {
 		vetService.save(vet1);
 
 		Vet vet2 = new Vet();
-		vet2.setId(1L);
 		vet2.setFirstName("Jessie");
 		vet2.setLastName("Porter");
 //		vet2.getSpecialities().add(savedSurgery);
