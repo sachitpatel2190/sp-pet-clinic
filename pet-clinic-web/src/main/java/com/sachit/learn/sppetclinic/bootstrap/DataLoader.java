@@ -10,10 +10,12 @@ import com.sachit.learn.sppetclinic.model.Pet;
 import com.sachit.learn.sppetclinic.model.PetType;
 import com.sachit.learn.sppetclinic.model.Speciality;
 import com.sachit.learn.sppetclinic.model.Vet;
+import com.sachit.learn.sppetclinic.model.Visit;
 import com.sachit.learn.sppetclinic.services.OwnerService;
 import com.sachit.learn.sppetclinic.services.PetTypeService;
 import com.sachit.learn.sppetclinic.services.SpecialityService;
 import com.sachit.learn.sppetclinic.services.VetService;
+import com.sachit.learn.sppetclinic.services.VisitService;
 
 @Component
 public class DataLoader implements CommandLineRunner {
@@ -22,15 +24,17 @@ public class DataLoader implements CommandLineRunner {
 	private final VetService vetService;
 	private final PetTypeService petTypeService;
 	private final SpecialityService specialityService;
+	private final VisitService visitService;
 
 	
 	public DataLoader(OwnerService ownerService, VetService vetService, PetTypeService petTypeService,
-			SpecialityService specialityService) {
+			SpecialityService specialityService, VisitService visitService) {
 		super();
 		this.ownerService = ownerService;
 		this.vetService = vetService;
 		this.petTypeService = petTypeService;
 		this.specialityService = specialityService;
+		this.visitService = visitService;
 	}
 
 	@Override
@@ -96,7 +100,7 @@ public class DataLoader implements CommandLineRunner {
 
 		ownerService.save(owner2);
 		System.out.println("Loaded Owner....");
-/*
+  
 		Visit catVisit = new Visit();
 		catVisit.setPet(fionasCat);
 		catVisit.setDate(LocalDate.now());
@@ -105,7 +109,7 @@ public class DataLoader implements CommandLineRunner {
 		visitService.save(catVisit);
 
 		System.out.println("Loaded Owners....");
-*/
+
 		Vet vet1 = new Vet();
 		vet1.setFirstName("Sam");
 		vet1.setLastName("Axe");
