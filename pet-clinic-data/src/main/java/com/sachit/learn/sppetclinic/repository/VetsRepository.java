@@ -1,8 +1,8 @@
 package com.sachit.learn.sppetclinic.repository;
 
 import com.sachit.learn.sppetclinic.model.Vet;
-import com.sachit.learn.sppetclinic.services.CrudService;
+import org.springframework.data.repository.CrudRepository;
 
-public interface VetsRepository extends CrudService<Vet, Long>{ 
+public interface VetsRepository extends CrudRepository<Vet, Long>{ 
 
 }

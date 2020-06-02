@@ -2,6 +2,7 @@ package com.sachit.learn.sppetclinic.services.map;
 
 import java.util.Set;
 
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 import com.sachit.learn.sppetclinic.model.Speciality;
@@ -10,6 +11,7 @@ import com.sachit.learn.sppetclinic.services.SpecialityService;
 import com.sachit.learn.sppetclinic.services.VetService;
 
 @Service
+@Profile({"default","map"})
 public class VetServiceMap extends AbstractMapService<Vet, Long> implements VetService{
 
 	private final SpecialityService specialityService;

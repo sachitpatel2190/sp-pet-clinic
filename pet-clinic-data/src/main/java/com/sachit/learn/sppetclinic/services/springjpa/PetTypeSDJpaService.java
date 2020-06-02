@@ -21,7 +21,7 @@ public class PetTypeSDJpaService implements PetTypeService{
 	}
 	@Override
 	public PetType findById(Long id) {
-		return this.petTypeRepository.findById(id);
+		return this.petTypeRepository.findById(id).orElse(null);
 	}
 
 	@Override

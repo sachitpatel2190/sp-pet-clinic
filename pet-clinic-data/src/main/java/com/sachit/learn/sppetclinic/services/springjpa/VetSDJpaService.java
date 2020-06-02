@@ -12,37 +12,39 @@ import com.sachit.learn.sppetclinic.services.VetService;
 
 @Service
 @Profile("springdatajpa")
-public class VetSDJpaService implements VetService{
+public class VetSDJpaService implements VetService {
 
-	private final VetsRepository vetRepository;
-	public  VetSDJpaService(VetsRepository vetRepository) {
-		this.vetRepository = vetRepository;		
+	private final VetsRepository vetsRepository;
+	
+	public  VetSDJpaService(VetsRepository vetsRepository) {
+		this.vetsRepository = vetsRepository;		
 	}
+	
 	@Override
 	public Vet findById(Long id) {
-		return this.vetRepository.findById(id);
+		return this.vetsRepository.findById(id).orElse(null);
 	}
 
 	@Override
 	public Vet save(Vet vet) {
-		return this.vetRepository.save(vet);
+		return this.vetsRepository.save(vet);
 	}
 
 	@Override
 	public Set<Vet> findAll() {
 		Set<Vet> vets = new HashSet<Vet>();
-		this.vetRepository.findAll().forEach(vets::add);
+		this.vetsRepository.findAll().forEach(vets::add);
 		return vets;
 	}
 
 	@Override
 	public void deleteById(Long id) {
-		this.vetRepository.deleteById(id);
+		this.vetsRepository.deleteById(id);
 	}
 
 	@Override
 	public void delete(Vet object) {
-		this.vetRepository.delete(object);	
+		this.vetsRepository.delete(object);	
 	}
 
 }
