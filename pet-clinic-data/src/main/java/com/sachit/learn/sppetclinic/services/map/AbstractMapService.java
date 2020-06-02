@@ -42,11 +42,11 @@ public abstract class AbstractMapService<T extends BaseEntity, Id extends Long> 
 		return new HashSet<T>(map.values());
 	}
 	
-	void deleteById(Id id) {
+	public void deleteById(Id id) {
 		map.remove(id);
 	}
 	
-	void delete(T object) {
+	public void delete(T object) {
 		map.entrySet().removeIf(entry -> entry.getValue().equals(object));
 	}
 

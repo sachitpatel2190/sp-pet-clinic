@@ -33,11 +33,11 @@ public class PetServiceMap extends AbstractMapService<Pet, Long> implements PetS
 		return super.findAll();
 	}
 	
-	void deleteById(Long id) {
+	public void deleteById(Long id) {
 		super.deleteById(id);
 	}
 	
-	void delete(Pet object) {
+	public void delete(Pet object) {
 		super.delete(object);
 	}
 }

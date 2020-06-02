@@ -4,15 +4,37 @@ import java.util.Set;
 
 import org.springframework.stereotype.Service;
 
+import com.sachit.learn.sppetclinic.model.Speciality;
 import com.sachit.learn.sppetclinic.model.Vet;
+import com.sachit.learn.sppetclinic.services.SpecialityService;
 import com.sachit.learn.sppetclinic.services.VetService;
 
 @Service
 public class VetServiceMap extends AbstractMapService<Vet, Long> implements VetService{
 
+	private final SpecialityService specialityService;
+	
+	public VetServiceMap(SpecialityService specialityService){
+		this.specialityService = specialityService;
+	}
+	
 	@Override
 	public Vet save(Vet vet) {
-		return super.save(vet);
+		
+		if(vet != null) {
+			if(vet.getSpecialities() != null) {
+				vet.getSpecialities().forEach(speciality -> {
+					
+					if(speciality.getId() == null) {
+						Speciality savedSpeciality = specialityService.save(speciality);
+						speciality.setId(savedSpeciality.getId());
+					}				
+				});	
+			}
+			return super.save( vet);
+		} else {
+			return null;
+		}
 	}
 
 	/**
@@ -32,11 +54,11 @@ public class VetServiceMap extends AbstractMapService<Vet, Long> implements VetS
 		return super.findAll();
 	}
 	
-	void deleteById(Long id) {
+	public void deleteById(Long id) {
 		super.deleteById(id);
 	}
 	
-	void delete(Vet object) {
+	public void delete(Vet object) {
 		super.delete(object);
 	}
 }

@@ -28,11 +28,11 @@ public class PetTypeServiceMap extends AbstractMapService<PetType, Long> impleme
 		return super.findAll();
 	}
 	
-	void deleteById(Long id) {
+	public void deleteById(Long id) {
 		super.deleteById(id);
 	}
 	
-	void delete(PetType object) {
+	public void delete(PetType object) {
 		super.delete(object);
 	}
 }

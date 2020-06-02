@@ -2,8 +2,6 @@ package com.sachit.learn.sppetclinic.services.map;
 
 import java.util.Set;
 
-import javax.management.RuntimeErrorException;
-
 import org.springframework.stereotype.Service;
 
 import com.sachit.learn.sppetclinic.model.Owner;
@@ -54,25 +52,20 @@ public class OwnerServiceMap extends AbstractMapService<Owner, Long> implements 
 	 *  Need to figure out why below code is added
 	 */
 
-	
-
 	public Owner findById(Long id) {
 		return super.findById(id);
 	}
-
-	
-	
 	
 	public Set<Owner> findAll() {
 
 		return super.findAll();
 	}
 	
-	void deleteById(Long id) {
+	public void deleteById(Long id) {
 		super.deleteById(id);
 	}
 	
-	void delete(Owner object) {
+	public void delete(Owner object) {
 		super.delete(object);
 	}
 
